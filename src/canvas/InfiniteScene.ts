@@ -225,24 +225,28 @@ export class InfiniteScene<T extends MediaItem = MediaItem> {
       this.pinchStartDist = this.currentPinchDistance();
     }
   };
-
   private onPointerMove = (e: PointerEvent) => {
-    if (!this.activePointers.has(e.pointerId)) return;
-    this.activePointers.set(e.pointerId, { x: e.clientX, y: e.clientY });
-
     if (this.activePointers.size === 1 && this.isDragging) {
       const dx = e.clientX - this.lastPointer.x;
       const dy = e.clientY - this.lastPointer.y;
-      this.targetVel.x -= dx * 0.012;
-      this.targetVel.y += dy * 0.012;
+
+      const sensitivity = isTouchDevice() ? 0.02 : 0.025;
+
+      this.targetVel.x -= dx * sensitivity;
+      this.targetVel.y += dy * sensitivity;
+
       this.lastPointer = { x: e.clientX, y: e.clientY };
     } else if (this.activePointers.size === 2) {
+      // handle pinch-to-zoom by tracking distance between two pointers
       const dist = this.currentPinchDistance();
       const delta = dist - this.pinchStartDist;
-      this.targetVel.z -= delta * 0.02;
+      this.targetVel.z += delta * 0.01;
       this.pinchStartDist = dist;
+      const pts = [...this.activePointers.values()];
+      this.lastPointer = { x: (pts[0].x + pts[1].x) / 2, y: (pts[0].y + pts[1].y) / 2 };
     }
   };
+
 
   private onPointerUp = (e: PointerEvent) => {
     this.activePointers.delete(e.pointerId);
@@ -288,7 +292,7 @@ export class InfiniteScene<T extends MediaItem = MediaItem> {
 
   private onWheel = (e: WheelEvent) => {
     e.preventDefault();
-    this.scrollAccum += e.deltaY * 0.004;
+    this.scrollAccum += e.deltaY * 0.006;
     this.targetVel.z += this.scrollAccum;
     this.scrollAccum *= 0.8;
   };
