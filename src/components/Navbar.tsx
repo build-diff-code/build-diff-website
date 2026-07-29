@@ -244,7 +244,7 @@ export function Navbar() {
       HOME
     </Link>
   ) : (
-    <Link to="/product/img1" className={styles.navbar__gridView} onClick={() => setOpen(false)}>
+    <Link to="/product/prod1" className={styles.navbar__gridView} onClick={() => setOpen(false)}>
       GRID VIEW
     </Link>
   )}
