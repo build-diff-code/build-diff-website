@@ -5,6 +5,9 @@ import { ProductDetail } from "~/src/pages/ProductDetail";
 import { WhatWeLike } from "~/src/pages/WhatWeLike";
 import "./index.css";
 import { ThemeProvider } from "~/src/theme/ThemeProvider";
+import '@fontsource/darker-grotesque/400.css';
+import '@fontsource/darker-grotesque/600.css';
+import '@fontsource-variable/playfair';
 
 export function App() {
   return (

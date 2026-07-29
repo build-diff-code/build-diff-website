@@ -1,9 +1,17 @@
+@font-face {
+  font-family: 'PP Telegraf';
+  src: url('/font/PPTelegraf-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 .navbar {
   position: fixed;
   inset: 0;
   z-index: 50;
   pointer-events: none;
-  font-family: system-ui, sans-serif;
+  font-family:"PP Telegraf", sans-serif;
   mix-blend-mode: difference;
 }
 
@@ -120,6 +128,7 @@
   width: 18px;
   height: 18px;
   color: #fff;
+  
 }
 
 /* opacity/visibility/clipPath are intentionally NOT set here anymore.
@@ -146,11 +155,14 @@
   padding-top: 90px;
   overflow-y: auto;
   background: var(--color-bg);
+  
 }
 
 .navbar__navList {
   display: flex;
   flex-direction: column;
+  
+ 
 }
 
 /* Each row spans the full width edge-to-edge, with its own divider and
@@ -181,6 +193,7 @@
   letter-spacing: 0.02em;
   opacity: 0.85;
   transition: opacity 0.2s ease;
+  
 }
 
 .navbar__navHeader:hover {
@@ -239,6 +252,7 @@
 .navbar__navLabelInner {
   display: block;
   will-change: transform;
+  
 }
 
 /* Sub-content (e.g. contact details) revealed under a row when it's the
@@ -258,14 +272,37 @@
   flex-wrap: wrap;
   gap: 8px 32px;
   padding: 0 28px 20px;
-  font-size: 13px;
+  font-size: 15px;
+  letter-spacing: 0.04em;
+  color: currentColor;
+  opacity: 0.7;
+  justify-content: space-between;
+  
+  
+}
+
+/* SERVICES panel: fixed 3-column grid so entries line up as
+   Brand Strategy | Visual Identity | Web Design
+   Motion         | Copywriting     | Art Direction
+   instead of wrapping as one flowed block of text. */
+.navbar__servicesGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px 40px;
+  padding: 0 28px 20px;
+}
+
+.navbar__serviceItem {
+  font-size: 15px;
   letter-spacing: 0.04em;
   color: currentColor;
   opacity: 0.7;
 }
 
 .navbar__socials {
-  position: fixed;
+  padding: 2em 0 1.5em;
+  justify-content:space-around;
+  align-items: center;
   bottom: 24px;
   left: 28px;
   right: 28px;
@@ -297,6 +334,7 @@
 .navbar__teamCard {
   display: flex;
   flex-direction: column;
+  padding-bottom: 12px;
 }
 
 .navbar__teamPhotoWrap {
@@ -305,6 +343,7 @@
   aspect-ratio: 1 / 1;
   overflow: hidden;
   background: color-mix(in srgb, currentColor 8%, transparent);
+  margin-bottom: 14px;
 }
 
 .navbar__teamPhoto {

@@ -2,12 +2,13 @@ export const CHUNK_SIZE = 40;
 export const ITEMS_PER_CHUNK = 5;
 export const RENDER_DISTANCE = 1; // chunks fully opaque within this chebyshev distance
 export const CHUNK_FADE_MARGIN = 1; // extra chunks over which opacity fades to 0
-export const MAX_VELOCITY = 2.5; // tune to taste — try values between 1.5–4
+export const MAX_VELOCITY = 3.2; // tune to taste — try values between 1.5–4
 export const DEPTH_FADE_START = 30;
 export const DEPTH_FADE_END = 60;
 
 export const INVIS_THRESHOLD = 0.01;
-export const VELOCITY_LERP = 0.08;
+export const KEYBOARD_SPEED = 0.18;
+export const VELOCITY_LERP = 0.16;
 export const VELOCITY_DECAY = 0.9;
 export const OPACITY_LERP = 0.18;
 

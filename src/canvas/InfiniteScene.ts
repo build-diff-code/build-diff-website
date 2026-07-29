@@ -288,7 +288,7 @@ export class InfiniteScene<T extends MediaItem = MediaItem> {
 
   private onWheel = (e: WheelEvent) => {
     e.preventDefault();
-    this.scrollAccum += e.deltaY * 0.001;
+    this.scrollAccum += e.deltaY * 0.004;
     this.targetVel.z += this.scrollAccum;
     this.scrollAccum *= 0.8;
   };

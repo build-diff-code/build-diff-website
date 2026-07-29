@@ -51,6 +51,7 @@ export function ProductDetail() {
             className={styles.title}
           >
             {product.name}
+            <p className={styles.client}>{product.client}</p>
           </motion.h1>
 
           <motion.div
@@ -58,7 +59,7 @@ export function ProductDetail() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.55, delay: 0.4, ease: "easeOut" }}
           >
-            <p className={styles.price}>{product.client}</p>
+            
             <p className={styles.description}>{product.description}</p>
 
             <div className={styles.ctaRow}>

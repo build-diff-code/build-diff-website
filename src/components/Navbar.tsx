@@ -58,6 +58,7 @@ type NavItem = {
   href: string;
   highlight?: boolean;
   details?: { label: string; value: string }[];
+  list?: string[]; // grid-of-items panels like SERVICES
   team?: TeamMember[];
 };
 
@@ -75,14 +76,20 @@ const NAV_ITEMS: NavItem[] = [
     label: "CONTACT",
     href: "#contact",
     details: [
-      { label: "Email", value: "builddiff@gmail.com" },
-      { label: "Support", value: "teamdiff@gmail.com" },
+      { label: "Email", value: "info.build.diff@gmail.com"},
       { label: "Phone", value: "98199 09275" },
     ],
   },
-  { label: "ABOUT US", href: "#about", details: [{ label: "", value: "Content coming soon." }] },
-  { label: "SERVICES", href: "#services", details: [{ label: "", value: "Content coming soon." }] },
-  { label: "DREAMTEAM", href: "#dreamteam", team: TEAM_MEMBERS },
+  { label: "ABOUT US", href: "#about", details: [{ label: "", value: "We are a design-driven studio building brands, products, and experiences that leave a mark. Based everywhere. Available always." }] },
+  {
+    label: "SERVICES",
+    href: "#services",
+    // Rendered as a 3-column grid (see .navbar__servicesGrid) so it lines
+    // up as: Brand Strategy | Visual Identity | Web Design
+    //        Motion         | Copywriting     | Art Direction
+    list: ["Brand Strategy", "Visual Identity", "Web Design", "Motion", "Copywriting", "Art Direction"],
+  },
+  { label: "THE DREAM TEAM", href: "#dreamteam", team: TEAM_MEMBERS },
   // Highlighted CTA row — deliberately NOT an accordion. Keeps its
   // ArrowIcon and no `details`, so clicking it still navigates (via href,
   // once wired up) and closes the menu.
@@ -110,7 +117,7 @@ export function Navbar() {
   const navigate = useNavigate();
 
   const handleRowClick = (item: NavItem) => {
-    if (item.details || item.team) {
+    if (item.details || item.team || item.list) {
       setOpenItem((current) => (current === item.label ? null : item.label));
       return;
     }
@@ -202,10 +209,10 @@ export function Navbar() {
   }, [open]);
 
   // Accordion: animate to real content height (not a guessed max-height).
-  // Applies to both plain-text (`details`) and team-grid (`team`) panels.
+  // Applies to text (`details`), grid-list (`list`), and team-grid (`team`) panels.
   React.useLayoutEffect(() => {
     NAV_ITEMS.forEach((item) => {
-      if (!item.details && !item.team) return;
+      if (!item.details && !item.team && !item.list) return;
       const panel = panelRefs.current.get(item.label);
       if (!panel) return;
 
@@ -233,11 +240,11 @@ export function Navbar() {
   </button>
 
   {isProductPage || isWhatWeLikePage ? (
-    <Link to="/" className={styles.navbar__gridView}>
+    <Link to="/" className={styles.navbar__gridView} onClick={() => setOpen(false)}>
       HOME
     </Link>
   ) : (
-    <Link to="/product/img1" className={styles.navbar__gridView}>
+    <Link to="/product/img1" className={styles.navbar__gridView} onClick={() => setOpen(false)}>
       GRID VIEW
     </Link>
   )}
@@ -279,14 +286,14 @@ export function Navbar() {
                   type="button"
                   className={`${styles.navbar__navHeader} ${item.highlight ? styles.navbar__navItemHighlight : ""}`}
                   onClick={() => handleRowClick(item)}
-                  aria-expanded={item.details || item.team ? isExpanded : undefined}
+                  aria-expanded={item.details || item.team || item.list ? isExpanded : undefined}
                 >
                   <span className={styles.navbar__navLabelMask}>
                     <span className={styles.navbar__navLabelInner} ref={setLabelRef(item.label)}>
                       {item.label}
                     </span>
                   </span>
-                  {item.highlight && !item.details && !item.team ? (
+                  {item.highlight && !item.details && !item.team && !item.list ? (
                     <ArrowIcon ref={setIconRef(item.label)} className={styles.navbar__navIcon} />
                   ) : (
                     <ChevronIcon
@@ -317,6 +324,16 @@ export function Navbar() {
                           </div>
                           <span className={styles.navbar__teamName}>{member.name}</span>
                         </div>
+                      ))}
+                    </div>
+                  </div>
+                ) : item.list ? (
+                  <div ref={setPanelRef(item.label)} className={styles.navbar__navPanel}>
+                    <div className={styles.navbar__servicesGrid}>
+                      {item.list.map((entry) => (
+                        <span key={entry} className={styles.navbar__serviceItem}>
+                          {entry}
+                        </span>
                       ))}
                     </div>
                   </div>

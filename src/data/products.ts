@@ -14,7 +14,7 @@ export const products: Product[] = [
   {
     slug: "img1",
     name: "NAME",
-    client: "CLIENT",
+    client: "COMPANY / CLIENT NAME",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
     url: "products/img1.png",
     width: 1200,
@@ -23,7 +23,7 @@ export const products: Product[] = [
   {
     slug: "img10",
     name: "NAME",
-    client: "CLIENT",
+    client: "COMPANY / CLIENT NAME",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
     url: "products/img10.png",
     width: 1080,
@@ -32,7 +32,7 @@ export const products: Product[] = [
   {
     slug: "img11",
     name: "NAME",
-    client: "CLIENT",
+    client: "COMPANY / CLIENT NAME",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
     url: "products/img11.png",
     width: 1200,
@@ -41,7 +41,7 @@ export const products: Product[] = [
   {
     slug: "img12",
     name: "NAME",
-    client: "CLIENT",
+    client: "COMPANY / CLIENT NAME",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
     url: "products/img12.png",
     width: 1200,
@@ -50,7 +50,7 @@ export const products: Product[] = [
   {
     slug: "img13",
     name: "NAME",
-    client: "CLIENT",
+    client: "COMPANY / CLIENT NAME",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
     url: "products/img13.png",
     width: 736,
@@ -59,7 +59,7 @@ export const products: Product[] = [
   {
     slug: "img14",
     name: "NAME",
-    client: "CLIENT",
+    client: "COMPANY / CLIENT NAME",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
     url: "products/img14.png",
     width: 640,
@@ -68,7 +68,7 @@ export const products: Product[] = [
   {
     slug: "img15",
     name: "NAME",
-    client: "CLIENT",
+    client: "COMPANY / CLIENT NAME",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
     url: "products/img15.png",
     width: 750,
@@ -77,7 +77,7 @@ export const products: Product[] = [
   {
     slug: "img16",
     name: "NAME",
-    client: "CLIENT",
+    client: "COMPANY / CLIENT NAME",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
     url: "products/img16.png",
     width: 992,
@@ -86,16 +86,16 @@ export const products: Product[] = [
   {
     slug: "img17",
     name: "NAME",
-    client: "CLIENT",
+    client: "COMPANY / CLIENT NAME",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
     url: "products/img17.jpg",
-    width: 2560,
-    height: 1438,
+    width: 1662,
+    height: 1448,
   },
   {
     slug: "img18",
     name: "NAME",
-    client: "CLIENT",
+    client: "COMPANY / CLIENT NAME",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
     url: "products/img18.png",
     width: 1920,
@@ -104,7 +104,7 @@ export const products: Product[] = [
   {
     slug: "img19",
     name: "NAME",
-    client: "CLIENT",
+    client: "COMPANY / CLIENT NAME",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
     url: "products/img19.png",
     width: 1920,
@@ -113,7 +113,7 @@ export const products: Product[] = [
   {
     slug: "img2",
     name: "NAME",
-    client: "CLIENT",
+    client: "COMPANY / CLIENT NAME",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
     url: "products/img2.png",
     width: 1200,
@@ -122,7 +122,7 @@ export const products: Product[] = [
   {
     slug: "img20",
     name: "NAME",
-    client: "CLIENT",
+    client: "COMPANY / CLIENT NAME",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
     url: "products/img20.png",
     width: 1920,
@@ -131,7 +131,7 @@ export const products: Product[] = [
   {
     slug: "img3",
     name: "NAME",
-    client: "CLIENT",
+    client: "COMPANY / CLIENT NAME",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
     url: "products/img3.png",
     width: 734,
@@ -140,16 +140,16 @@ export const products: Product[] = [
   {
     slug: "img4",
     name: "NAME",
-    client: "CLIENT",
+    client: "COMPANY / CLIENT NAME",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
     url: "products/img4.png",
-    width: 611,
-    height: 1072,
+    width: 411,
+    height: 600,
   },
   {
     slug: "img5",
     name: "NAME",
-    client: "CLIENT",
+    client: "COMPANY / CLIENT NAME",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
     url: "products/img5.png",
     width: 1080,
@@ -158,7 +158,7 @@ export const products: Product[] = [
   {
     slug: "img6",
     name: "NAME",
-    client: "CLIENT",
+    client: "COMPANY / CLIENT NAME",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
     url: "products/img6.png",
     width: 510,
@@ -167,16 +167,16 @@ export const products: Product[] = [
   {
     slug: "img7",
     name: "NAME",
-    client: "CLIENT",
+    client: "COMPANY / CLIENT NAME",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
     url: "products/img7.png",
-    width: 736,
-    height: 920,
+    width: 786,
+    height: 982,
   },
   {
     slug: "img8",
     name: "NAME",
-    client: "CLIENT",
+    client: "COMPANY / CLIENT NAME",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
     url: "products/img8.png",
     width: 941,
@@ -185,7 +185,7 @@ export const products: Product[] = [
   {
     slug: "img9",
     name: "NAME",
-    client: "CLIENT",
+    client: "COMPANY / CLIENT NAME",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
     url: "products/img9.png",
     width: 1920,
