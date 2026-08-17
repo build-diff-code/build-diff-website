@@ -1,34 +1,38 @@
 import * as React from "react";
-import type { MediaItem } from "~/src/data/media";
+import type { Product } from "~/src/data/products";
 import { useTheme } from "~/src/theme/ThemeProvider";
 import { InfiniteScene } from "./InfiniteScene";
 import styles from "./style.module.css";
 
-type InfiniteCanvasViewProps<T extends MediaItem> = {
-  items: T[];
-  /** Called with the clicked item's slug. Omit to make items unclickable. */
+type InfiniteCanvasViewProps = {
+  items: Product[];
   onItemClick?: (slug: string) => void;
 };
 
-export function InfiniteCanvasView<T extends MediaItem>({
+export function InfiniteCanvasView({
   items,
   onItemClick,
-}: InfiniteCanvasViewProps<T>) {
+}: InfiniteCanvasViewProps) {
   const canvasRef = React.useRef<HTMLCanvasElement>(null);
-  const sceneRef = React.useRef<InfiniteScene<T> | null>(null);
+  const sceneRef = React.useRef<InfiniteScene | null>(null);
   const { theme } = useTheme();
 
   React.useEffect(() => {
     if (!canvasRef.current) return;
 
-    const scene = new InfiniteScene<T>(canvasRef.current, items, onItemClick, theme);
+    const scene = new InfiniteScene(
+      canvasRef.current,
+      items,
+      onItemClick,
+      theme,
+    );
+
     sceneRef.current = scene;
 
     return () => {
       sceneRef.current = null;
       scene.dispose();
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [items, onItemClick]);
 
   React.useEffect(() => {

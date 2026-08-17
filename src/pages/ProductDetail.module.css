@@ -10,7 +10,7 @@
   min-height: 100vh;
   height: 100vh;
   overflow: hidden;
-  
+
   position: relative;
 }
 
@@ -40,6 +40,11 @@
 @media (min-width: 768px) {
   .layout {
     flex-direction: row;
+  }
+
+  .imageWrap {
+    width: clamp(420px, 52vw, 900px);
+    height: 100%;
   }
 }
 
@@ -79,7 +84,6 @@
   object-fit: cover;
 }
 
-
 .info {
   flex: 1;
   display: flex;
@@ -87,7 +91,6 @@
   justify-content: space-between;
   padding: 20px 24px calc(env(safe-area-inset-bottom, 0px) + 88px);
   overflow-y: auto;
-  
 }
 
 @media (min-width: 768px) {
@@ -101,7 +104,7 @@
   letter-spacing: -0.01em;
   line-height: 1;
   margin-bottom: 0.375rem;
-  font-family:"PP Telegraf", sans-serif;
+  font-family: "PP Telegraf", sans-serif;
   font-weight: 500;
 }
 
@@ -116,8 +119,7 @@
   font-size: 10px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  font-family:"PP Telegraf", sans-serif;
-  
+  font-family: "PP Telegraf", sans-serif;
 }
 
 @media (min-width: 768px) {
@@ -130,8 +132,8 @@
   max-width: 420px;
   line-height: 1;
   margin: 24px 0 0;
-  font-family:"PP Telegraf", sans-serif;
-  font-size:11px;
+  font-family: "PP Telegraf", sans-serif;
+  font-size: 11px;
 }
 
 @media (min-width: 768px) {
@@ -141,47 +143,10 @@
   }
 }
 
-.ctaRow {
-  display: flex;
-  justify-content: flex-start;
-  margin-top: 12px;
-  width: 70%;
-}
-
-@media (min-width: 768px) {
-  .ctaRow {
-    margin-top: 16px;
-     display: flex;
-     justify-content: flex-end;
-  }
-}
-
-.cta {
-  background: none;
-  border: none;
-  cursor: pointer;
-  font-size: 11px;
-  letter-spacing: 0.1em;
-  color: inherit;
-  transition: opacity 0.3s ease;
-  font-family:"PP Telegraf", sans-serif;
- 
-}
-
-@media (min-width: 768px) {
-  .cta {
-    font-size: 18px;
-  }
-}
-
-.cta:hover {
-  opacity: 0.6;
-}
-
 .rule {
   width: 100%;
   height: 1px;
-  
+
   opacity: 0.2;
   margin-bottom: 16px;
 }
@@ -195,23 +160,12 @@
 .navRow {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-}
-
-.count {
-  font-size: 10px;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-}
-
-@media (min-width: 768px) {
-  .count {
-    font-size: 11px;
-  }
+  justify-content: flex-end;
 }
 
 .navBtns {
   display: flex;
+  justify-content: flex-end;
   align-items: center;
   gap: 16px;
 }

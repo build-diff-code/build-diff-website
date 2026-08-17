@@ -287,26 +287,31 @@
    instead of wrapping as one flowed block of text. */
 .navbar__servicesGrid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 16px 40px;
-  padding: 0 28px 20px;
+  grid-template-columns: repeat(5, minmax(160px, 240px));
+  justify-content: start;
+  gap: 20px 72px;
+  padding: 4px 28px 24px;
 }
-
 /* Tablet */
 @media (max-width: 992px) {
   .navbar__servicesGrid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 16px 24px;
-    padding: 0 28px 20px;
+    grid-template-columns: repeat(1, minmax(140px, 220px));
+    gap: 16px 48px;
+    padding: 4px 28px 20px;
   }
 }
-
-/* Mobile */
+@media (max-width: 1127px) {
+  .navbar__servicesGrid {
+    grid-template-columns: repeat(1, minmax(140px, 220px));
+    gap: 16px 48px;
+    padding: 4px 28px 20px;
+  }
+}
 @media (max-width: 576px) {
   .navbar__servicesGrid {
     grid-template-columns: 1fr;
-    gap: 16px;
-    padding: 0 28px 20px;
+    gap: 14px;
+    padding: 4px 20px 18px;
   }
 }
 

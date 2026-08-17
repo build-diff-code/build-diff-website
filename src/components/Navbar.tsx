@@ -87,16 +87,16 @@ const NAV_ITEMS: NavItem[] = [
     // Rendered as a 3-column grid (see .navbar__servicesGrid) so it lines
     // up as: Brand Strategy | Visual Identity | Web Design
     //        Motion         | Copywriting     | Art Direction
-    list: ["Brand Strategy", "Visual Identity", "Web Design", "Motion", "Copywriting", "Art Direction"],
+    list: ["Industrial Design", "Graphic Design", "UI/UX", "Prototyping", "3D Visualization"],
   },
   { label: "THE DREAM TEAM", href: "#dreamteam", team: TEAM_MEMBERS },
   // Highlighted CTA row — deliberately NOT an accordion. Keeps its
   // ArrowIcon and no `details`, so clicking it still navigates (via href,
   // once wired up) and closes the menu.
-  { label: "SEE WHAT WE LOVE", href: "/what-we-like", highlight: true },
+ 
 ];
 
-const SOCIALS = ["LinkedIn", "Behance", "Instagram", "Pinterest", "Spotify"];
+const SOCIALS = ["LinkedIn", "Behance", "Instagram", "Pinterest",];
 
 export function Navbar() {
   const [open, setOpen] = React.useState(false);
@@ -106,7 +106,6 @@ export function Navbar() {
   const dark = theme === "dark";
   const location = useLocation();
   const isProductPage = location.pathname.startsWith("/product");
-  const isWhatWeLikePage = location.pathname.startsWith("/what-we-like");
 
   const overlayRef = React.useRef<HTMLElement>(null);
   const labelInnerRefs = React.useRef<Map<string, HTMLSpanElement>>(new Map());
@@ -239,12 +238,12 @@ export function Navbar() {
     {open ? "CLOSE" : "MENU"}
   </button>
 
-  {isProductPage || isWhatWeLikePage ? (
+   {isProductPage ? (
     <Link to="/" className={styles.navbar__gridView} onClick={() => setOpen(false)}>
       HOME
     </Link>
   ) : (
-    <Link to="/product/prod1" className={styles.navbar__gridView} onClick={() => setOpen(false)}>
+    <Link to="/product/rahee" className={styles.navbar__gridView} onClick={() => setOpen(false)}>
       GRID VIEW
     </Link>
   )}
