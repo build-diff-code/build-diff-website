@@ -59,16 +59,7 @@ export function ProductDetail() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.55, delay: 0.4, ease: "easeOut" }}
           >
-<<<<<<< HEAD
             <p className={styles.description}>{product.description}</p>
-=======
-            
-            <p className={styles.description}>{product.description}</p>
-
-            <div className={styles.ctaRow}>
-              <button className={styles.cta}>know more →</button>
-            </div>
->>>>>>> 178c59cc9fa5e37fd36f14ecf654e39b9e2f31bb
           </motion.div>
 
           <motion.div
@@ -78,12 +69,6 @@ export function ProductDetail() {
           >
             <div className={styles.rule} />
             <div className={styles.navRow}>
-<<<<<<< HEAD
-=======
-              <span className={styles.count}>
-                {String(index + 1).padStart(2, "0")} / {String(TOTAL).padStart(2, "0")}
-              </span>
->>>>>>> 178c59cc9fa5e37fd36f14ecf654e39b9e2f31bb
               <div className={styles.navBtns}>
                 <button onClick={() => navigate(`/product/${prevSlug}`)} className={styles.navBtn}>
                   <svg width="14" height="8" viewBox="0 0 14 8" fill="none">
