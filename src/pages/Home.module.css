@@ -1,0 +1,37 @@
+.frame {
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+  pointer-events: none;
+  mix-blend-mode: difference;
+}
+
+.logo {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 70vw;
+  pointer-events: none;
+  user-select: none;
+ 
+  z-index: 40;
+}
+
+@media (min-width: 768px) {
+  .logo {
+    max-width: 47%;
+  }
+}
+
+.hint {
+  position: fixed;
+  bottom: 24px;
+  left: 28px;
+  z-index: 40;
+  margin: 0;
+  font-size: 12px;
+  color: #fff;
+  opacity: 0.7;
+  mix-blend-mode: difference;
+}

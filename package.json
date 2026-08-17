@@ -1,0 +1,31 @@
+{
+  "name": "product-canvas",
+  "private": true,
+  "version": "0.0.1",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview",
+    "generate:manifest": "node scripts/generate-product-manifest.mjs"
+  },
+  "dependencies": {
+    "@fontsource-variable/playfair": "^5.3.0",
+    "@fontsource/darker-grotesque": "^5.3.0",
+    "framer-motion": "^12.42.2",
+    "gsap": "^3.12.5",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-router-dom": "^6.28.0",
+    "three": "^0.170.0"
+  },
+  "devDependencies": {
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "@types/three": "^0.170.0",
+    "@vitejs/plugin-react": "^4.3.4",
+    "image-size": "^1.1.1",
+    "typescript": "^5.6.3",
+    "vite": "^6.0.0"
+  }
+}

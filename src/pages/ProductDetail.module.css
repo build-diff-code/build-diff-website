@@ -1,0 +1,248 @@
+@font-face {
+  font-family: 'PP Telegraf';
+  src: url('/font/PPTelegraf-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+.wrap {
+  min-height: 100vh;
+  height: 100vh;
+  overflow: hidden;
+  
+  position: relative;
+}
+
+.back {
+  position: absolute;
+  top: 20px;
+  left: 24px;
+  z-index: 10;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  color: inherit;
+  opacity: 0.75;
+  transition: opacity 0.2s ease;
+}
+
+.back:hover {
+  opacity: 1;
+}
+
+.layout {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+@media (min-width: 768px) {
+  .layout {
+    flex-direction: row;
+  }
+}
+
+.imageWrap {
+  position: relative;
+  flex-shrink: 0;
+  width: 100%;
+  height: 45vh;
+}
+
+@media (min-width: 768px) {
+  .imageWrap {
+    width: 53%;
+    height: 100%;
+  }
+}
+
+.imageWrap::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 64px;
+  background: linear-gradient(to top, #111111, transparent);
+}
+
+@media (min-width: 768px) {
+  .imageWrap::after {
+    display: none;
+  }
+}
+
+.image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+.info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px 24px calc(env(safe-area-inset-bottom, 0px) + 88px);
+  overflow-y: auto;
+  
+}
+
+@media (min-width: 768px) {
+  .info {
+    padding: 56px 48px 40px;
+  }
+}
+
+.title {
+  font-size: 35px;
+  letter-spacing: -0.01em;
+  line-height: 1;
+  margin-bottom: 0.375rem;
+  font-family:"PP Telegraf", sans-serif;
+  font-weight: 500;
+}
+
+@media (min-width: 768px) {
+  .title {
+    font-size: 62px;
+    margin-bottom: 8px;
+  }
+}
+
+.client {
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-family:"PP Telegraf", sans-serif;
+  
+}
+
+@media (min-width: 768px) {
+  .client {
+    font-size: 12px;
+  }
+}
+
+.description {
+  max-width: 420px;
+  line-height: 1;
+  margin: 24px 0 0;
+  font-family:"PP Telegraf", sans-serif;
+  font-size:11px;
+}
+
+@media (min-width: 768px) {
+  .description {
+    font-size: 18px;
+    margin-top: 0;
+  }
+}
+
+.ctaRow {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 12px;
+  width: 70%;
+}
+
+@media (min-width: 768px) {
+  .ctaRow {
+    margin-top: 16px;
+     display: flex;
+     justify-content: flex-end;
+  }
+}
+
+.cta {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  color: inherit;
+  transition: opacity 0.3s ease;
+  font-family:"PP Telegraf", sans-serif;
+ 
+}
+
+@media (min-width: 768px) {
+  .cta {
+    font-size: 18px;
+  }
+}
+
+.cta:hover {
+  opacity: 0.6;
+}
+
+.rule {
+  width: 100%;
+  height: 1px;
+  
+  opacity: 0.2;
+  margin-bottom: 16px;
+}
+
+@media (min-width: 768px) {
+  .rule {
+    margin-bottom: 24px;
+  }
+}
+
+.navRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.count {
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+@media (min-width: 768px) {
+  .count {
+    font-size: 11px;
+  }
+}
+
+.navBtns {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+@media (min-width: 768px) {
+  .navBtns {
+    gap: 20px;
+  }
+}
+
+.navBtn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: inherit;
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  transition: opacity 0.2s ease;
+}
+
+@media (min-width: 768px) {
+  .navBtn {
+    font-size: 11px;
+    gap: 8px;
+  }
+}
+
+.navBtn:hover {
+  opacity: 0.6;
+}

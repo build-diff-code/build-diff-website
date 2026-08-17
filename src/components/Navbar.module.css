@@ -1,0 +1,416 @@
+@font-face {
+  font-family: 'PP Telegraf';
+  src: url('/font/PPTelegraf-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+.navbar {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  pointer-events: none;
+  font-family:"PP Telegraf", sans-serif;
+  mix-blend-mode: difference;
+}
+
+/* everything interactive gets pointer-events back.
+   Note: .navbar__overlayOpen is gone (see .navbar__overlay below), so
+   pointer-events for the open overlay's children are now scoped off the
+   `[aria-hidden="false"]` state instead of a toggled class. */
+.navbar__menuBtn,
+.navbar__gridView,
+.navbar__theme,
+.navbar__overlay[aria-hidden="false"],
+.navbar__overlay[aria-hidden="false"] .navbar__navHeader,
+.navbar__overlay[aria-hidden="false"] .navbar__socialLink {
+  pointer-events: auto;
+}
+
+/* Wraps MENU and GRID VIEW/HOME so they're vertically centered against
+   each other via flexbox — same pattern as .navbar__iconGroup — instead
+   of two independently fixed-positioned elements with hand-tuned offsets
+   that drift out of alignment if either label's font metrics change. */
+.navbar__leftGroup,
+.navbar__iconGroup {
+  position: fixed;
+  top: 24px;
+  display: flex;
+  align-items: center;
+  height: 45px;          /* same height as logo */
+}
+
+.navbar__leftGroup {
+  left: 28px;
+  gap: 20px;
+}
+
+.navbar__iconGroup {
+  right: 28px;
+  gap: 16px;
+}
+.navbar__menuBtn,
+.navbar__gridView {
+  display: flex;
+  align-items: center;
+  height: 28px;
+  padding: 0;
+  font-size: 12px;
+  line-height: 1;
+}
+
+
+
+.navbar__menuBtn {
+  background: none;
+  border: none;
+  margin: 0;
+  padding: 0;
+  color: #fff;
+  font: inherit;
+  font-size: 12px;
+  line-height: 1;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+  mix-blend-mode: difference;
+}
+
+.navbar__gridView {
+  font-size: 12px;
+  line-height: 1;
+  letter-spacing: 0.08em;
+  color: #fff;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+  mix-blend-mode: difference;
+}
+.navbar__divider {
+
+ 
+  color: #fff;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+  mix-blend-mode: difference;
+}
+
+.navbar__gridView:hover {
+  opacity: 1;
+}
+
+/* Wraps the theme toggle and logo so they're always vertically centered
+   against each other via flexbox, instead of two separately fixed-positioned
+   elements with hand-calculated offsets (fragile — breaks if the logo's
+   intrinsic size/aspect changes). */
+
+
+.navbar__sparkle {
+  width: 45px;
+  height: 45px;
+  display: block;
+  object-fit: contain;
+}
+
+
+.navbar__theme {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  mix-blend-mode: difference;
+}
+
+.navbar__themeIcon {
+  width: 18px;
+  height: 18px;
+  color: #fff;
+  
+}
+
+/* opacity/visibility/clipPath are intentionally NOT set here anymore.
+   GSAP is the single source of truth for this element's visibility —
+   it sets `visibility: hidden` + `clipPath: inset(0% 0% 100% 0%)` as the
+   initial state on mount (see setInitialState() in Navbar.tsx), animates
+   both open and close, and never hands control back to CSS.
+
+   Previously this had `opacity: 0; visibility: hidden;` plus a sibling
+   `.navbar__overlayOpen { opacity: 1; visibility: visible; }` class that
+   React toggled based on `open` state. That was the bug: closing the menu
+   removed the class instantly, snapping the overlay to `visibility: hidden`
+   in the same tick the close timeline started — so the close animation
+   played against an already-invisible element. Do not reintroduce a
+   class-based visibility toggle here; it will reintroduce that race. */
+.navbar__overlay {
+  position: fixed;
+  inset: 0;
+  height: 100dvh;
+  z-index: 30;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding-top: 90px;
+  overflow-y: auto;
+  background: var(--color-bg);
+  
+}
+
+.navbar__navList {
+  display: flex;
+  flex-direction: column;
+  
+ 
+}
+
+/* Each row spans the full width edge-to-edge, with its own divider and
+   click target — rather than a padded, left-aligned floating block. */
+.navbar__navRow {
+  border-top: 1px solid color-mix(in srgb, currentColor 15%, transparent);
+}
+
+.navbar__navRow:last-child {
+  border-bottom: 1px solid color-mix(in srgb, currentColor 15%, transparent);
+}
+
+.navbar__navHeader {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 18px 28px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: inherit;
+  text-decoration: none;
+  text-align: left;
+  font-family: inherit;
+  font-size: clamp(24px, 5vw, 44px);
+  letter-spacing: 0.02em;
+  opacity: 0.85;
+  transition: opacity 0.2s ease;
+  
+}
+
+.navbar__navHeader:hover {
+  opacity: 1;
+}
+.navbar__navHeader {
+  position: relative; /* anchors the underline */
+}
+.navbar__menuBtnWrap {
+  background: #D4FF1A;
+  mix-blend-mode: normal;
+}
+
+/* Sits flush to the row's bottom border. Starts collapsed via scaleX(0)
+   (set inline by React's initial render) and transform-origin so GSAP
+   can wipe it in/out from either edge without a layout-triggering
+   width tween. */
+.navbar__navUnderline {
+  position: absolute;
+  left: 28px;
+  right: 28px;
+  bottom: 0;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left;
+  pointer-events: none;
+}
+
+.navbar__navItemHighlight {
+  font-style: italic;
+}
+
+.navbar__navIcon {
+  flex: none;
+  width: 0.45em;
+  height: 0.45em;
+  transition: transform 0.35s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+.navbar__navIconOpen {
+  transform: rotate(180deg);
+}
+
+/* This mask is what makes the label a real "text coming from below"
+   reveal instead of just a moving span: overflow:hidden clips the inner
+   span to the row's line height, so as GSAP animates the inner span's
+   yPercent from 110 -> 0, the text appears to rise up out of a hidden
+   slot rather than sliding across already-visible space. */
+.navbar__navLabelMask {
+  display: block;
+  overflow: hidden;
+  line-height: 1.1;
+}
+
+.navbar__navLabelInner {
+  display: block;
+  will-change: transform;
+  
+}
+
+/* Sub-content (e.g. contact details) revealed under a row when it's the
+   currently-open accordion item. Individually clipped/collapsed so it
+   unfolds rather than instantly appearing. height/opacity are driven by
+   GSAP in JS (see the accordion useLayoutEffect in Navbar.tsx) — no CSS
+   transition and no toggled "open" class needed here, since there's only
+   ever one JS-driven tween target per panel. */
+.navbar__navPanel {
+  overflow: hidden;
+  height: 0;
+  opacity: 0;
+}
+
+.navbar__navPanelInner {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 32px;
+  padding: 0 28px 20px;
+  font-size: 15px;
+  letter-spacing: 0.04em;
+  color: currentColor;
+  opacity: 0.7;
+  justify-content: space-between;
+  
+  
+}
+
+/* SERVICES panel: fixed 3-column grid so entries line up as
+   Brand Strategy | Visual Identity | Web Design
+   Motion         | Copywriting     | Art Direction
+   instead of wrapping as one flowed block of text. */
+.navbar__servicesGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px 40px;
+  padding: 0 28px 20px;
+}
+
+/* Tablet */
+@media (max-width: 992px) {
+  .navbar__servicesGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px 24px;
+    padding: 0 28px 20px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+  .navbar__servicesGrid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding: 0 28px 20px;
+  }
+}
+
+
+.navbar__serviceItem {
+  font-size: 15px;
+  letter-spacing: 0.04em;
+  color: currentColor;
+  opacity: 0.7;
+}
+
+.navbar__socials {
+  padding: 2em 0 1.5em;
+  justify-content:space-around;
+  align-items: center;
+  bottom: 24px;
+  left: 28px;
+  right: 28px;
+  z-index: 40;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  
+}
+@media (max-width:768px) {
+  .navbar__socials {
+  padding: 2em;
+  justify-content:space-around;
+  align-items: center;
+  bottom: 24px;
+  left: 28px;
+  right: 28px;
+  z-index: 40;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  
+}
+}
+
+.navbar__socialLink {
+  color: inherit;
+  font-size: 12px;
+  letter-spacing: 0.05em;
+  text-decoration: none;
+  opacity: 0.7;
+}
+
+.navbar__socialLink:hover {
+  opacity: 1;
+}
+
+.navbar__teamGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px 80px;
+  padding: 8px 28px 28px;
+}
+
+.navbar__teamCard {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 12px;
+}
+
+.navbar__teamPhotoWrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  background: color-mix(in srgb, currentColor 8%, transparent);
+  margin-bottom: 14px;
+}
+
+.navbar__teamPhoto {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: grayscale(1);
+  transition: filter 0.3s ease;
+  user-select: none;
+}
+
+.navbar__teamSocialBadge {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  width: 22px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #1A1A1A;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 2px;
+}
+
+.navbar__teamName {
+  font-size: 13px;
+  letter-spacing: 0.05em;
+  color: currentColor;
+  opacity: 0.85;
+}
