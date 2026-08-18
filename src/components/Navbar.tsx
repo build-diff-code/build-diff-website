@@ -96,7 +96,12 @@ const NAV_ITEMS: NavItem[] = [
  
 ];
 
-const SOCIALS = ["LinkedIn", "Behance", "Instagram", "Pinterest",];
+const SOCIALS = [
+  { name: "LinkedIn", url: "https://www.linkedin.com/in/build-diff-10b15a414/" },
+  { name: "Behance", url: "#" },
+  { name: "Instagram", url: "https://www.instagram.com/studio.build.diff/" },
+  { name: "Pinterest", url: "#" },
+];
 
 export function Navbar() {
   const [open, setOpen] = React.useState(false);
@@ -352,13 +357,19 @@ export function Navbar() {
           })}
         </div>
 
-        <div ref={socialsRef} className={styles.navbar__socials}>
-          {SOCIALS.map((s) => (
-            <a key={s} href="#" className={styles.navbar__socialLink}>
-              {s}
-            </a>
-          ))}
-        </div>
+       <div ref={socialsRef} className={styles.navbar__socials}>
+  {SOCIALS.map((s) => (
+    
+     <a key={s.name}
+      href={s.url}
+      target="_blank"
+      rel="noreferrer"
+      className={styles.navbar__socialLink}
+    >
+      {s.name}
+    </a>
+  ))}
+</div>
       </nav>
     </>
   );
