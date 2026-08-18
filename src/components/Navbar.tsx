@@ -80,7 +80,23 @@ const NAV_ITEMS: NavItem[] = [
       { label: "Phone", value: "98199 09275" },
     ],
   },
-  { label: "ABOUT US", href: "#about", details: [{ label: "", value: "We are a design-driven studio building brands, products, and experiences that leave a mark. Based everywhere. Available always." }] },
+ {
+  label: "ABOUT US",
+  href: "#about",
+  details: [
+    {
+      label: "",
+      value: `Build Diff is a design studio built around ideas that deserve to exist.
+
+We bring together design, technology, and making to turn early concepts into clear, considered outcomes. From shaping an idea to defining its form and experience, we focus on creating work that feels purposeful, distinctive, and built for the real world.
+
+We believe good design is not about adding more. It’s about finding the right direction, refining the details, and making every decision count.
+
+Think different. Build better. Build Diff.`
+    }
+  ]
+},
+
   {
     label: "SERVICES",
     href: "#services",
@@ -342,15 +358,25 @@ export function Navbar() {
                     </div>
                   </div>
                 ) : (
-                  item.details && (
-                    <div ref={setPanelRef(item.label)} className={styles.navbar__navPanel}>
-                      <div className={styles.navbar__navPanelInner}>
-                        {item.details.map((d) => (
-                          <span key={d.label || d.value}>{d.value}</span>
-                        ))}
-                      </div>
-                    </div>
-                  )
+             item.details && (
+  <div ref={setPanelRef(item.label)} className={styles.navbar__navPanel}>
+    {item.label === "ABOUT US" ? (
+      <div className={styles.navbar__aboutInner}>
+        {item.details[0].value.split("\n\n").map((para, i) => (
+          <p key={i} className={styles.navbar__aboutPara}>
+            {para}
+          </p>
+        ))}
+      </div>
+    ) : (
+      <div className={styles.navbar__navPanelInner}>
+        {item.details.map((d) => (
+          <span key={d.label || d.value}>{d.value}</span>
+        ))}
+      </div>
+    )}
+  </div>
+)
                 )}
               </div>
             );

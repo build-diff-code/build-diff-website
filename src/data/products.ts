@@ -21,15 +21,6 @@ export const products: Product[] = [
     height: 700,
   },
   {
-    slug: "vayu",
-    name: "VAYU",
-    client: "Smart Air Purifier",
-    description: "VAYU is a lifestyle integrated air purifier that combines intuitive physical feedback, automation, and seamless spatial integration to transform air purification into an effortless everyday experience.",
-    url: "products/vayu.png",
-    width: 487,
-    height: 319,
-  },
-  {
     slug: "loop",
     name: "LOOP",
     client: "Modular Gardening",
@@ -44,8 +35,8 @@ export const products: Product[] = [
     client: "Smart Navigation & Assistant",
     description: "RAHEE is a smart navigation and assistance concept designed to make everyday movement more intuitive and independent. Combining physical feedback, intelligent automation, and seamless spatial interaction, the system helps guide users through their environment with clear, responsive cues.",
     url: "products/rahee.png",
-    width: 571,
-    height: 318,
+    width: 1920,
+    height: 1080,
   },
   {
     slug: "opulence",
@@ -80,8 +71,8 @@ export const products: Product[] = [
     client: "Geometric planter",
     description: "A geometric planter inspired by sharp, faceted forms that transforms everyday greenery into a contemporary decorative statement.",
     url: "products/prism_planter.png",
-    width: 300,
-    height: 440,
+    width: 1080,
+    height: 1350,
   },
   {
     slug: "aroma-sphere",
@@ -162,8 +153,8 @@ export const products: Product[] = [
     client: "Multifunctional desk lamp",
     description: "A multifunctional desk lamp featuring an integrated adhesive storage surface for keeping small essentials organized within easy reach.",
     url: "products/luma_dock.png",
-    width: 487,
-    height: 319,
+    width: 1512,
+    height: 1080,
   },
 
   {
@@ -172,8 +163,8 @@ export const products: Product[] = [
     client: "Smart Air Purifier",
     description: "VAYU is a lifestyle integrated air purifier that combines intuitive physical feedback, automation, and seamless spatial integration to transform air purification into an effortless everyday experience.",
     url: "products/vayu.png",
-    width: 487,
-    height: 319,
+    width: 2680,
+    height: 1950,
   },
 
 ];

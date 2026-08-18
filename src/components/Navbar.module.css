@@ -836,3 +836,31 @@
   color: currentColor;
   opacity: 0.85;
 }
+.navbar__aboutInner {
+  padding: 4px 28px 32px;
+  max-width: 760px;
+}
+
+.navbar__aboutPara {
+  margin: 0 0 16px;
+  font-size: 16px;
+  line-height: 1.65;
+  letter-spacing: 0.01em;
+  color: currentColor;
+  opacity: 0.75;
+}
+
+/* the closing tagline ("Think different. Build better. Build Diff.")
+   reads as a payoff line, not another sentence of body copy */
+.navbar__aboutPara:last-child {
+  margin-bottom: 0;
+  opacity: 0.95;
+  font-style: italic;
+}
+
+@media (max-width: 576px) {
+  .navbar__aboutPara {
+    font-size: 14px;
+    line-height: 1.55;
+  }
+}
